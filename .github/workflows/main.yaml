@@ -1,0 +1,25 @@
+name: ci
+on:
+  - push
+  - pull_request
+
+env:
+  CI: true
+  PYTHON_VERSION: "3.13"
+
+jobs:
+  # Build e publicação no GitHub Pages (branch gh-pages), igual ao template da disciplina
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # histórico completo: datas de revisão das páginas
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - run: pip install -r requirements.txt
+      - run: mkdocs gh-deploy --force

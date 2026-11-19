@@ -1,0 +1,117 @@
+site_name: store-pma · Pedro Machado
+site_author: Pedro Machado
+site_url: https://pedrohmm1.github.io/pedrohmm1-store-pma-docs
+repo_url: https://github.com/pedrohmm1/pedrohmm1-store-pma-docs
+repo_name: pedrohmm1/pedrohmm1-store-pma-docs
+
+theme:
+  name: material
+  language: pt-BR
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Modo escuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Modo claro
+  features:
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+    - content.tooltips
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.top
+    - navigation.path
+    - navigation.tracking
+    - navigation.expand
+  icon:
+    admonition:
+      note: fontawesome/solid/note-sticky
+      abstract: fontawesome/solid/book
+      info: fontawesome/solid/circle-info
+      tip: fontawesome/solid/bullhorn
+      success: fontawesome/solid/check
+      question: fontawesome/solid/circle-question
+      warning: fontawesome/solid/triangle-exclamation
+      failure: fontawesome/solid/bomb
+      danger: fontawesome/solid/skull
+      bug: fontawesome/solid/robot
+      example: fontawesome/solid/flask
+      quote: fontawesome/solid/quote-left
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.arithmatex:
+      generic: true
+      # só \( \) inline: "US$" nos textos não vira fórmula
+      inline_syntax: [round]
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - footnotes
+  - pymdownx.keys
+  - pymdownx.mark
+  - tables
+
+plugins:
+  - search:
+      lang: pt
+  - glightbox
+  - git-revision-date-localized:
+      enable_creation_date: true
+      fallback_to_build_date: true
+      enable_git_follow: false
+  - minify:
+      minify_html: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Início: index.md
+  - Projeto:
+    - Visão geral: projeto/index.md
+    - Arquitetura: projeto/arquitetura.md
+    - Meus serviços: projeto/servicos.md
+    - Como rodar: projeto/como-rodar.md
+    - AWS e EKS: projeto/aws-eks.md
+    - CI/CD (Jenkins): projeto/cicd.md
+    - Teste de carga e HPA: projeto/load-test.md
+    - Bottlenecks: projeto/bottlenecks.md
+    - Custos, PaaS e SLA: projeto/custos.md
+  - Apresentação: apresentacao.md
+  - Atividades individuais: individual.md
+  - Uso de IA: ia.md
+  - Esta documentação: esta-documentacao.md
+
+validation:
+  anchors: warn
+  unrecognized_links: warn
