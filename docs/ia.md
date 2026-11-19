@@ -32,7 +32,3 @@ integrantes declaram o uso deles nas próprias documentações.
 
 A disciplina exige que cada integrante saiba explicar e defender tudo o que entregou. Cada
 arquivo gerado com ajuda de IA foi explicado e revisado por Pedro Machado antes do commit.
-
-!!! warning "Revisar antes de entregar"
-
-    Ajuste esta lista para refletir exatamente o que você fez e revisou.
