@@ -20,22 +20,22 @@ flowchart LR
         order --> db
     end
     exchange --> ptax[PTAX do Banco Central]
-    classDef meu fill:#3f51b5,color:#fff,stroke:#1a237e
-    class gateway,auth,account,product meu
+    classDef pm fill:#3f51b5,color:#fff,stroke:#1a237e
+    class gateway,auth,account,product pm
 ```
 
-Em azul, os serviços que eu implementei.
+Em azul, os serviços implementados por Pedro Machado.
 
 | Serviço | Dono | Linguagem | Banco | Chama |
 |---|---|---|---|---|
-| **gateway** | **eu** | Java (Spring Cloud Gateway) | — | auth (`/auth/solve`) e roteia o resto |
-| **auth** | **eu** | Java | — | account |
-| **account** | **eu** | Java | schema `accounts` | — |
-| **product** | **eu** | Java | schema `products` | — |
+| **gateway** | **Pedro Machado** | Java (Spring Cloud Gateway) | — | auth (`/auth/solve`) e roteia o resto |
+| **auth** | **Pedro Machado** | Java | — | account |
+| **account** | **Pedro Machado** | Java | schema `accounts` | — |
+| **product** | **Pedro Machado** | Java | schema `products` | — |
 | order | Enzo | Java | schema `orders` + Redis | product, exchange |
 | exchange | Pedro Garcia | Python (FastAPI) | — | PTAX (API externa) |
 
-Regras que todos seguem (combinadas no `handoff` que eu escrevi para o grupo):
+Regras que todos seguem (combinadas no documento de passagem que Pedro Machado escreveu para o grupo):
 
 - nome do Service no Kubernetes (e no compose) igual ao do serviço, sempre na porta **8080**;
 - `GET /<serviço>/health-check` responde 200 sem login;
@@ -59,7 +59,7 @@ store-pma/
 └── load-test/                # Locust + HPA do gateway
 ```
 
-Regra que segui sempre: **push no repositório do serviço antes** de atualizar o ponteiro do
+Regra seguida sempre: **push no repositório do serviço antes** de atualizar o ponteiro do
 submódulo no root, para um `git clone --recurse-submodules` nunca apontar para um commit que não
 existe no GitHub.
 

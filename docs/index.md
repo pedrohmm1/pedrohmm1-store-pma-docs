@@ -26,22 +26,22 @@ Tabela de notas da [página do projeto](https://insper.github.io/platform/2026.2
 
 | Item | Peso | Status | Quem | Onde |
 |---|---|---|---|---|
-| Gateway | 5% | :material-check: | **eu** | [Meus serviços](projeto/servicos.md#gateway) |
-| Auth | 5% | :material-check: | **eu** | [Meus serviços](projeto/servicos.md#auth) |
-| Account | 5% | :material-check: | **eu** | [Meus serviços](projeto/servicos.md#account) |
+| Gateway | 5% | :material-check: | **Pedro Machado** | [Serviços implementados](projeto/servicos.md#gateway) |
+| Auth | 5% | :material-check: | **Pedro Machado** | [Serviços implementados](projeto/servicos.md#auth) |
+| Account | 5% | :material-check: | **Pedro Machado** | [Serviços implementados](projeto/servicos.md#account) |
 | Exchange | 5% | :material-check: | Pedro Garcia | [Arquitetura](projeto/arquitetura.md) |
 | Bottlenecks (≥ 2 por integrante) | 20% | :material-check: | todos | [Bottlenecks](projeto/bottlenecks.md) |
-| AWS | 5% | :material-check: | **eu** | [AWS e EKS](projeto/aws-eks.md) |
-| EKS | 10% | :material-check: | **eu** | [AWS e EKS](projeto/aws-eks.md) |
-| Jenkins (CI/CD) | 10% | :material-check: | **eu** | [CI/CD](projeto/cicd.md) |
-| Load Testing | 15% | :material-check: | **eu** | [Teste de carga](projeto/load-test.md) |
+| AWS | 5% | :material-check: | **Pedro Machado** | [AWS e EKS](projeto/aws-eks.md) |
+| EKS | 10% | :material-check: | **Pedro Machado** | [AWS e EKS](projeto/aws-eks.md) |
+| Jenkins (CI/CD) | 10% | :material-check: | **Pedro Machado** | [CI/CD](projeto/cicd.md) |
+| Load Testing | 15% | :material-check: | **Pedro Machado** | [Teste de carga](projeto/load-test.md) |
 | PaaS, Custos e SLA | 10% | :material-check: | Pedro Garcia | [Custos](projeto/custos.md) |
 | MkDocs | 10% | :material-check: | cada um | esta documentação |
 
-Além da tabela: **Product** (meu) e **Order** (Enzo), o **vídeo de apresentação** do grupo
+Além da tabela: **Product** (Pedro Machado) e **Order** (Enzo), o **vídeo de apresentação** do grupo
 ([Apresentação](apresentacao.md)) e a **declaração de uso de IA** ([Uso de IA](ia.md)).
 
-## Linha do tempo da minha parte
+## Linha do tempo da parte de Pedro Machado
 
 | Data | Entrega |
 |---|---|

@@ -100,7 +100,7 @@ nav:
   - Projeto:
     - Visão geral: projeto/index.md
     - Arquitetura: projeto/arquitetura.md
-    - Meus serviços: projeto/servicos.md
+    - Serviços implementados: projeto/servicos.md
     - Como rodar: projeto/como-rodar.md
     - AWS e EKS: projeto/aws-eks.md
     - CI/CD (Jenkins): projeto/cicd.md

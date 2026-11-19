@@ -2,7 +2,7 @@
 
 Página da disciplina: [Load Testing](https://insper.github.io/platform/2026.2/exercises/project/load-testing/).
 Arquivos em `store-pma/load-test/`: `locustfile.py`, `hpa-gateway.yaml`, `requirements.txt` e o
-README com os resultados. Planejei, rodei e medi este teste no EKS em 12/11/2026.
+README com os resultados. Pedro Machado planejou, rodou e mediu este teste no EKS em 12/11/2026.
 
 ## Cenário
 
@@ -65,9 +65,9 @@ spec:
 1. 6, e não 10: o cluster tem 2 nós `t3.medium` (4 vCPU) e não tem Cluster Autoscaler; réplicas
    além do que cabe ficariam `Pending`.
 2. 50% do **request** de CPU do gateway (250m), ou seja ~125m por pod. Precisa do
-   **metrics-server**, que instalei como add-on do EKS no `eks.yaml`.
+   **metrics-server**, instalado como add-on do EKS no `eks.yaml`.
 
-Ambiente: EKS us-east-2, 2 nós `t3.medium`, RDS `db.t4g.micro`. O gerador rodou no meu PC, no
+Ambiente: EKS us-east-2, 2 nós `t3.medium`, RDS `db.t4g.micro`. O gerador rodou no PC de Pedro Machado, no
 Brasil (1 master + 4 workers do Locust, porque `--processes` não funciona no Windows).
 
 ## Resultados (12/11/2026)
@@ -118,7 +118,7 @@ As 500 contas `loadtest.*` criadas pelo teste foram apagadas do RDS no fim.
 ## Vídeo do teste com HPA
 
 O vídeo foi gravado pelo Pedro Garcia para o grupo, com os **mesmos `k8s.yaml` e o mesmo
-`hpa-gateway.yaml`** que eu fiz para o EKS, num cluster kind de 2 nós:
+`hpa-gateway.yaml`** que Pedro Machado fez para o EKS, num cluster kind de 2 nós:
 
 <video controls preload="metadata" width="100%">
   <source src="../../video/hpa.mp4" type="video/mp4">

@@ -50,7 +50,7 @@ services:
 
 !!! warning "Memória"
 
-    São 5 JVMs + Postgres + Redis. No meu notebook (16 GB) o Docker travou depois de dias com o
+    São 5 JVMs + Postgres + Redis. Num notebook de 16 GB o Docker travou depois de dias com o
     compose de pé e pouca RAM livre; feche programas pesados antes do `up`.
 
 ## Minikube

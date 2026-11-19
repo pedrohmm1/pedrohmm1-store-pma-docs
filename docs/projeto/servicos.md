@@ -1,6 +1,6 @@
-# Meus serviços
+# Serviços implementados
 
-Implementei **Gateway**, **Auth**, **Account** e **Product**, seguindo os hands-on 1 (CRUD),
+Pedro Machado implementou **Gateway**, **Auth**, **Account** e **Product**, seguindo os hands-on 1 (CRUD),
 2 (Gateway) e 3 (Security) e o exercício [Product API](https://insper.github.io/platform/2026.2/exercises/product/).
 Todos em Java 25 + Spring Boot 4.1.1, com o padrão **contrato + implementação** do hands-on:
 o contrato (interface Feign + DTOs) é um jar separado que os outros serviços usam.
@@ -48,13 +48,13 @@ return solve(cookie.getValue().trim())                       // POST http://auth
     .flatMap(solved -> chain.filter(authorize(exchange, solved)));  // injeta id-account / id-role
 ```
 
-Decisões que eu tomei (e sei defender):
+Decisões de projeto:
 
 | Decisão | Por quê |
 |---|---|
 | Auth com erro 4xx → **401**; Auth fora do ar ou 5xx → **503** | token ruim é culpa do cliente; Auth caído não é |
 | `WebClient` criado uma vez (o hands-on criava um por requisição) | menos alocação por requisição |
-| Corrigi o `matches` do hands-on (o `replaceAll` apagava o `-`) | `/auth/health-check` nunca casava |
+| `matches` do hands-on corrigido (o `replaceAll` apagava o `-`) | `/auth/health-check` nunca casava |
 | `/auth/solve` bloqueado de fora (rota com `SetStatus=404`) | endpoint é só para o gateway |
 | Health-check do Order e do Exchange abertos (18/11) | o site exige `GET /<serviço>/health-check` sem login |
 
@@ -88,8 +88,8 @@ return Jwts.builder()
 - O token vai **só no cookie `HttpOnly`** (o JavaScript do navegador não lê), nunca no corpo.
 - A chave vem de `JWT_SECRET_KEY` (`.env` / Secret do Kubernetes). Sem ela, o serviço não sobe.
 - **Problema real no EKS:** o cookie tinha `Secure; SameSite=None` fixo, e o navegador não guarda
-  cookie `Secure` em HTTP (o Load Balancer do projeto é HTTP). Criei `JWT_COOKIE_SECURE`
-  (padrão `true`; `false` → sem `Secure` e `SameSite=Lax`) e usei `"false"` no `k8s.yaml`.
+  cookie `Secure` em HTTP (o Load Balancer do projeto é HTTP). A solução foi criar `JWT_COOKIE_SECURE`
+  (padrão `true`; `false` → sem `Secure` e `SameSite=Lax`) e usar `"false"` no `k8s.yaml`.
 
 ## Account
 
@@ -144,7 +144,7 @@ public void requireAdmin() {
 
 ## Smoke test (o mesmo nos três ambientes)
 
-Rodei esta sequência no compose, no Minikube e no EKS (pela URL pública), sempre com sucesso:
+Esta sequência rodou no compose, no Minikube e no EKS (pela URL pública), sempre com sucesso:
 
 | Passo | Esperado |
 |---|---|
@@ -157,5 +157,5 @@ Rodei esta sequência no compose, no Minikube e no EKS (pela URL pública), semp
 | `GET /auth/logout` → `GET /auth/me` | 200 → **401** |
 
 Os outros serviços (Order, do Enzo, e Exchange, do Pedro Garcia) estão nas documentações deles;
-a integração do Order com o Product e com o meu gateway foi conferida em 18/11/2026 (pedido
+a integração do Order com o Product e com o gateway foi conferida em 18/11/2026 (pedido
 criado, preço congelado no item, 404 para pedido de outro usuário, 422 para moeda inválida).

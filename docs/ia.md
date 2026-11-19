@@ -2,7 +2,7 @@
 
 A [página do projeto](https://insper.github.io/platform/2026.2/exercises/project/) permite o uso de
 IA, limitado a tarefas específicas, e exige que ele seja declarado: o que foi feito com IA e o
-que foi feito pelo integrante. Esta declaração cobre a minha parte (Pedro Machado). Os outros
+que foi feito pelo integrante. Esta declaração cobre a parte de Pedro Machado. Os outros
 integrantes declaram o uso deles nas próprias documentações.
 
 **Ferramenta:** Claude Code (Anthropic), como assistente no terminal e no VS Code.
@@ -19,7 +19,7 @@ integrantes declaram o uso deles nas próprias documentações.
 | Smoke tests e limpeza dos dados de teste | execução dos comandos `curl`/`psql` |
 | Esta documentação | rascunho do texto das páginas a partir dos READMEs e das evidências |
 
-## O que foi feito por mim
+## O que foi feito por Pedro Machado
 
 - implementação dos serviços Gateway, Auth, Account e Product, seguindo os hands-on;
 - as decisões: layout do root, um cluster EKS para o grupo, banco no RDS, ambiente descartável,
@@ -31,7 +31,7 @@ integrantes declaram o uso deles nas próprias documentações.
 - coordenação com o grupo (contrato do Exchange com o Enzo, passagem para os colegas).
 
 A disciplina exige que cada integrante saiba explicar e defender tudo o que entregou. Cada
-arquivo gerado com ajuda de IA foi explicado e revisado por mim antes do commit.
+arquivo gerado com ajuda de IA foi explicado e revisado por Pedro Machado antes do commit.
 
 !!! warning "Revisar antes de entregar"
 

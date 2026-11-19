@@ -14,9 +14,9 @@ Montado e narrado pelo **Pedro Garcia**. As cenas de terminal e navegador são g
 projeto: a loja pelo gateway (imagens `pedrohmm1/*` do Docker Hub), os `k8s.yaml` com o HPA
 escalando, o Grafana do Order e o cache e a varredura do Exchange.
 
-## Onde a minha parte aparece no vídeo
+## Onde a parte de Pedro Machado aparece no vídeo
 
-| Tempo | Parte | O que é meu |
+| Tempo | Parte | O que é de Pedro Machado |
 |---|---|---|
 | 0:13 | Arquitetura | gateway como porta única, Auth/Account/Product, EKS + RDS na AWS, Jenkins |
 | 0:35 | Demonstração | 401 sem login e 403 para `USER` (filtro do gateway + regras de papel do Product) |

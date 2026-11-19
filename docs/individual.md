@@ -7,10 +7,10 @@ As atividades da seção *Exercises → Individual* do site e os hands-on, e ond
 
 | Atividade | Situação | Onde |
 |---|---|---|
-| [Product API](https://insper.github.io/platform/2026.2/exercises/product/) | **feita por mim** | [Meus serviços](projeto/servicos.md#product) · [EP-PC/Product](https://github.com/EP-PC/Product) · [EP-PC/Product-service](https://github.com/EP-PC/Product-service) |
-| [Jenkins](https://insper.github.io/platform/2026.2/exercises/jenkins/) | **feita por mim**: 6 jobs, push multi-arch e deploy no EKS | [CI/CD](projeto/cicd.md) · `Jenkinsfile` de cada service |
-| [MiniKube](https://insper.github.io/platform/2026.2/exercises/minikube/) | **feita por mim**: Postgres + 4 serviços | [Como rodar](projeto/como-rodar.md#minikube) · `k8s/k8s.yaml` de cada service · `store-pma/api/postgres/` |
-| [Bottlenecks](https://insper.github.io/platform/2026.2/exercises/bottlenecks/) | **2 feitos por mim** | [Bottlenecks](projeto/bottlenecks.md) |
+| [Product API](https://insper.github.io/platform/2026.2/exercises/product/) | **feita por Pedro Machado** | [Serviços implementados](projeto/servicos.md#product) · [EP-PC/Product](https://github.com/EP-PC/Product) · [EP-PC/Product-service](https://github.com/EP-PC/Product-service) |
+| [Jenkins](https://insper.github.io/platform/2026.2/exercises/jenkins/) | **feita por Pedro Machado**: 6 jobs, push multi-arch e deploy no EKS | [CI/CD](projeto/cicd.md) · `Jenkinsfile` de cada service |
+| [MiniKube](https://insper.github.io/platform/2026.2/exercises/minikube/) | **feita por Pedro Machado**: Postgres + 4 serviços | [Como rodar](projeto/como-rodar.md#minikube) · `k8s/k8s.yaml` de cada service · `store-pma/api/postgres/` |
+| [Bottlenecks](https://insper.github.io/platform/2026.2/exercises/bottlenecks/) | **2 feitos por Pedro Machado** | [Bottlenecks](projeto/bottlenecks.md) |
 | [Order API](https://insper.github.io/platform/2026.2/exercises/order/) | feita no projeto pelo Enzo | [EP-PC/Order-service](https://github.com/EP-PC/Order-service) |
 | [Exchange API](https://insper.github.io/platform/2026.2/exercises/exchange/) | feita no projeto pelo Pedro Garcia | [EP-PC/Exchange-service](https://github.com/EP-PC/Exchange-service) |
 
@@ -24,7 +24,7 @@ As atividades da seção *Exercises → Individual* do site e os hands-on, e ond
 | 4. DevOps | Jenkins do projeto (`store-pma/jenkins/`) e Jenkinsfiles |
 | 5. Orchestration | manifestos Kubernetes, Minikube e depois EKS |
 
-## O que eu fiz, em resumo
+## O que Pedro Machado fez, em resumo
 
 - **4 microsserviços** (Gateway, Auth, Account, Product) e os 2 contratos (`store:account`,
   `store:product`), com as regras de autorização por papel.

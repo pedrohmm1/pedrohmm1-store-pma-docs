@@ -4,7 +4,7 @@ Páginas da disciplina: [CI/CD](https://insper.github.io/platform/2026.2/exercis
 e exercício [Jenkins](https://insper.github.io/platform/2026.2/exercises/jenkins/). O requisito:
 *"after the image is pushed to Docker Hub, Jenkins deploys the image to EKS"*.
 
-O Jenkins roda em Docker no meu computador (`store-pma/jenkins/compose.yaml`, o mesmo do
+O Jenkins roda em Docker no computador de Pedro Machado (`store-pma/jenkins/compose.yaml`, o mesmo do
 professor), com JDK 25, Maven, Docker CLI + buildx, `kubectl` e AWS CLI. Um job **Pipeline** por
 repositório ("Pipeline script from SCM", branch `*/main`, `Jenkinsfile` na raiz):
 
@@ -97,5 +97,5 @@ como previsto.
 
 ## Deploy sem derrubar a API
 
-Durante os primeiros deploys pelo Jenkins, medi ~40 s de HTTP 503 a cada rollout. A correção
+Nos primeiros deploys pelo Jenkins, foram medidos ~40 s de HTTP 503 a cada rollout. A correção
 (`readinessProbe`) está em [Bottlenecks](bottlenecks.md#2-deploy-derrubando-a-api-readinessprobe).

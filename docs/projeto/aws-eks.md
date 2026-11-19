@@ -5,7 +5,7 @@ Páginas da disciplina: [AWS](https://insper.github.io/platform/2026.2/exercises
 `pmapi-bcc-grupo05`, região **us-east-2 (Ohio)**, acesso pelo portal SSO.
 
 Toda a infraestrutura é **código** (CloudFormation em `store-pma/aws/`) e sobe ou desce com
-**um comando**, por qualquer integrante com acesso SSO. Assim o grupo não depende de mim nem de
+**um comando**, por qualquer integrante com acesso SSO. Assim o grupo não depende de uma pessoa só nem de
 cliques no console, e nada fica ligado gastando dinheiro sem querer.
 
 ## Stacks
@@ -56,7 +56,7 @@ apontam para o RDS em vez do Postgres do cluster.
 Apaga primeiro o **Service `gateway`** (para a AWS remover o Load Balancer, que não pertence a
 nenhuma stack) e depois as stacks na ordem inversa. Nunca apaga o usuário IAM do Jenkins.
 
-!!! failure "Bug que eu encontrei e corrigi"
+!!! failure "Bug encontrado e corrigido"
 
     Na primeira versão, a função que testava se uma stack existia tratava **qualquer erro** como
     "não existe". Com o token SSO expirado, o script "pulou" as stacks de IAM e VPC e terminou
@@ -76,8 +76,8 @@ nenhuma stack) e depois as stacks na ordem inversa. Nunca apaga o usuário IAM d
 
     Em 12/11 o `down.ps1` parou no meio (a internet caiu e depois o login SSO expirou) e o
     cluster, os nós e os NAT Gateways ficaram ligados a noite toda. Desde então, depois de todo
-    `down.ps1` eu confiro o inventário da região (stacks, EKS, NAT, EIP, ELB, RDS, volumes) antes
-    de considerar encerrado.
+    `down.ps1`, o inventário da região (stacks, EKS, NAT, EIP, ELB, RDS, volumes) é conferido
+    antes de considerar encerrado.
 
 ## Evidências (11/11/2026)
 

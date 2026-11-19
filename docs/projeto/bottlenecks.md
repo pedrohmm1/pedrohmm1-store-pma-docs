@@ -1,12 +1,12 @@
 # Bottlenecks
 
 A [página de apresentação](https://insper.github.io/platform/2026.2/exercises/project/presentation/)
-pede **pelo menos 2 bottlenecks por integrante**. Os meus dois saíram de problemas que eu
-**medi** no EKS, não de uma lista: cada um tem o antes, a correção e o depois.
+pede **pelo menos 2 bottlenecks por integrante**. Os dois de Pedro Machado saíram de problemas
+**medidos** no EKS, não de uma lista: cada um tem o antes, a correção e o depois.
 
 | Integrante | Bottleneck 1 | Bottleneck 2 |
 |---|---|---|
-| **Pedro Machado** (eu) | **Escala / load balancing**: HPA do gateway | **Disponibilidade no deploy**: `readinessProbe` |
+| **Pedro Machado** | **Escala / load balancing**: HPA do gateway | **Disponibilidade no deploy**: `readinessProbe` |
 | Enzo Perego (Order) | Caching: Redis para preços e cotações | Observability: Prometheus + Grafana |
 | Pedro Garcia (Exchange) | Caching: cotações com fallback | Vulnerability scanning: pip-audit + Trivy |
 
@@ -43,8 +43,8 @@ O p50 quase não mudou (~170 ms) porque é dominado pela rede Brasil → Ohio. D
 
 ## 2. Deploy derrubando a API → `readinessProbe`
 
-**Problema.** Quando coloquei o deploy automático no Jenkins, medi com uma requisição por
-segundo pelo Load Balancer durante o rollout: **~40 s de HTTP 503 a cada deploy**. Sem probe, o
+**Problema.** Com o deploy automático no Jenkins, uma medição com uma requisição por
+segundo pelo Load Balancer durante o rollout mostrou **~40 s de HTTP 503 a cada deploy**. Sem probe, o
 Kubernetes considera o pod novo pronto assim que o container inicia e já tira o antigo, mas o
 Spring Boot leva ~40 s para subir. Com deploy contínuo, isso é indisponibilidade a cada push.
 
@@ -79,7 +79,7 @@ pod antigo terminar o que está atendendo antes de sair.
 !!! note "Evolução: probe no health-check"
 
     O site passou a pedir que as probes chamem o `GET /<serviço>/health-check`. O Order e o
-    Exchange já usam `httpGet` nesse endpoint. Nos meus quatro serviços o endpoint existe e
+    Exchange já usam `httpGet` nesse endpoint. Nos quatro serviços de Pedro Machado o endpoint existe e
     responde 200 (`/accounts/health-check`, `/auth/health-check`, `/products/health-check` e
     `/health-check` no gateway); trocar `tcpSocket` por `httpGet` é uma mudança de 3 linhas por
     manifesto, com os mesmos tempos.
